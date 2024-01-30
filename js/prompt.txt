@@ -1,0 +1,12 @@
+Task: Analyze the following video transcript and suggest placements for relevant assets from your limited library in JSON format. Each entry in the JSON should specify the 'asset name' and its corresponding 'timestamp' in seconds within the video. Be creative and resourceful in utilizing the available assets to effectively represent different concepts. 
+
+Available assets: 
+"share, account, inbox, analytics, restart, calendar, chat, accessibility, heart, warning, settings, trending-down, trending-up, right arrow, videocam, star-rating-morph, magnifier-zoom-search, document, suitcase, arrow-1-rounded, avatar-man, avatar-female, computer-display, dividends, equity-security, conversation-talking-community, video-camera, iota-internet-of-things, thumb-down, one-1, web-www-internet, star-of-bethlehem, frysztak-town, human-avatar, clock-time, eye, envelope-mail-send, computer-display, person-sign-protest, consultation, computer-mouse".
+
+Example: 
+"Transcript excerpt: 'We need to increase our efficiency and meet the deadline.'
+Output of the given transcript in JSON format: 
+{
+  "asset_name": "clock",
+  "timestamp": 30
+}"
