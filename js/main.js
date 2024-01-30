@@ -1,17 +1,17 @@
-(function () {
- 'use strict';
- var path, slash;
- path = location.href;
-	if(getOS() == "MAC") {
-		slash = "/";
-		path = path.substring(0, path.length - 11);
-	}
-	if(getOS() == "WIN") {
-		slash = "/";
-		path = path.substring(8, path.length - 11);
-	}
+// (function () {
+//  'use strict';
+//  var path, slash;
+//  path = location.href;
+// 	if(getOS() == "MAC") {
+// 		slash = "/";
+// 		path = path.substring(0, path.length - 11);
+// 	}
+// 	if(getOS() == "WIN") {
+// 		slash = "/";
+// 		path = path.substring(8, path.length - 11);
+// 	}
 
- }());
+//  }());
 
 function getOS() {
  		var userAgent = window.navigator.userAgent,
@@ -31,19 +31,16 @@ function getOS() {
 function goIntoJSX(){
 	var args = "Test Text";
 	var layerNames = undefined;
-	var interface = new CSInterface();
-	interface.evalScript('getLayerNames("' + args + '")',function(res){
+	var csinterface = new CSInterface();
+	csinterface.evalScript('getLayerNames("' + args + '")',function(res){
 	layerNames = JSON.parse(res);
 });
-	setTimeout(() => {
-		alert(layerNames);
-	}, 500);
 
 }
 
 function addFilesJS(){
-	var interface = new CSInterface();
-	interface.evalScript('addFiles()',function(res){
+	var csinterface = new CSInterface();
+	csinterface.evalScript('addFiles()',function(res){
 		// interface.evalScript('af()',function(res){
 })}
 

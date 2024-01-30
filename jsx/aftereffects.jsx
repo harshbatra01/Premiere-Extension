@@ -53,8 +53,8 @@
 $._PPP_={
   
   
-addFiles : function (a){ 
-  alert("hi" + a );
+addFiles : function (){ 
+  alert("hi" );
 // for (var i = 0; i < .length; i++) {
       //     var element = elements[i];
       //     var time = element.timestamp;
