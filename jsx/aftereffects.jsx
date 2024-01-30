@@ -55,6 +55,7 @@ $._PPP_={
   
 addFiles : function (){ 
   alert("hi" );
+  alert("hi");
 // for (var i = 0; i < .length; i++) {
       //     var element = elements[i];
       //     var time = element.timestamp;
@@ -113,6 +114,6 @@ addFiles : function (){
       }
       
 }
-// alert('hi')
+// is this working
 // addFiles();
 }
