@@ -6,7 +6,7 @@
                 "request": "launch",
                 "name": "Launch Script",
                 "hostAppSpecifier": "premierepro-24.0",
-                "script": "~/jsx/aftereffects.jsx",
+                "script": "~/jsx/ppro.jsx",
             }
     ]
 }
