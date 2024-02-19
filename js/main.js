@@ -39,8 +39,9 @@ function goIntoJSX(){
 }
 
 function addFilesJS(){
+	alert("hi");
 	var csinterface = new CSInterface();
-	csinterface.evalScript('addFiles()',function(res){
+	csinterface.evalScript("$._PPP_.addFiles()",function(){
 		// interface.evalScript('af()',function(res){
 })}
 
