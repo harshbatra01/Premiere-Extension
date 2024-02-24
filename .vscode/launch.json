@@ -5,8 +5,8 @@
                 "type": "extendscript-debug",
                 "request": "launch",
                 "name": "Launch Script",
-                "hostAppSpecifier": "premierepro-24.0",
-                "script": "~/jsx/ppro.jsx",
+                // "hostAppSpecifier": "premierepro-24.0",
+                "script": "${workspaceFolder}/jsx/ppro2.jsx",
             }
     ]
 }
