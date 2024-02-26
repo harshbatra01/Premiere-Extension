@@ -1,6 +1,7 @@
 // function getClipName(){
 //   var clipName = app.project.sequence[0].videoTracks[0].clips[0].name;
 // }
+app.enableQE();
 
 function addFiles() {
 
@@ -125,4 +126,26 @@ var audTrackOffset = 0; // Replace with the audio track offset
 app.project.activeSequence.importMGT(pathToMOGRT, timeToInsert, vidTrackOffset, audTrackOffset);
 
 }
-mogrtTest2();
+
+function addEffects(){
+  var sequence = app.project.activeSequence;
+  var clip = qe.project.getActiveSequence().getVideoTrackAt(0).getItemAt(0);
+  clip.addVideoEffect(qe.project.getVideoEffectByName("Lumetri Color"));
+  var tracks = sequence.videoTracks;
+  var mainTrack = tracks[0];
+  var clips = mainTrack.clips;
+  var mainClip = clips[0];
+
+  var components = mainClip.componenets;
+  var effect;
+
+  for(var i=0;i < components.numItems;i++){
+    
+    if(components[i].displayName == "Lumetri Color"){
+      effect = components[i];
+    }
+  }
+  effect.properties[83].setValue(100,true);
+}
+
+addEffects();
