@@ -135,17 +135,25 @@ function addEffects(){
   var mainTrack = tracks[0];
   var clips = mainTrack.clips;
   var mainClip = clips[0];
-
-  var components = mainClip.componenets;
+  var components = mainClip.components;
   var effect;
-
-  for(var i=0;i < components.numItems;i++){
-    
-    if(components[i].displayName == "Lumetri Color"){
-      effect = components[i];
-    }
+  if(components){
+    for (var i = 0; i < components.numItems; i++) {
+      if (components[i] && components[i].displayName == "Lumetri Color") {
+         effect = components[i];
+         break; 
+       }
+     }
+   
+     if (effect) {
+       effect.properties[83].setValue(100, true);
+     } else {
+       alert("Lumetri Color effect not found in the components.");
+     }
   }
-  effect.properties[83].setValue(100,true);
+  else {
+    alert("components not found.")
+  }
 }
 
 addEffects();
