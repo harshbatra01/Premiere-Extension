@@ -127,33 +127,57 @@ app.project.activeSequence.importMGT(pathToMOGRT, timeToInsert, vidTrackOffset, 
 
 }
 
-function addEffects(){
+function addEffects() {
   var sequence = app.project.activeSequence;
-  var clip = qe.project.getActiveSequence().getVideoTrackAt(0).getItemAt(0);
-  clip.addVideoEffect(qe.project.getVideoEffectByName("Lumetri Color"));
   var tracks = sequence.videoTracks;
   var mainTrack = tracks[0];
   var clips = mainTrack.clips;
   var mainClip = clips[0];
-  var components = mainClip.components;
-  var effect;
-  if(components){
-    for (var i = 0; i < components.numItems; i++) {
-      if (components[i] && components[i].displayName == "Lumetri Color") {
-         effect = components[i];
-         break; 
-       }
-     }
+  var effect = mainClip.components;
+  var sequence = qe.project.getActiveSequence();
+    // var clip = sequence.getVideoTrackAt(0).getItemAt(0);
+    // clip.addVideoEffect(qe.project.getVideoEffectByName("Tint"));
+
+  if(effect){
+    for(var i=0;i<effect.numItems;i++){
+      
+      if(effect[i].displayName === 'Tint'){
+        
+        effect[i].properties[2].setValue(50, true);
+      }
+      
+    }
+  }
+  else{
+    alert("error");
+  }
+  
+  // clip.addVideoEffect(qe.project.getVideoEffectByName("Color Balance (RGB)"));
+
+  // // Set property of the effect using QE DOM
+  // var components = clip.components;
+  // var effect;
+  // if (components) {
+  //   for (var i = 0; i < components.numItems; i++) {
+  //     if (components[i] && components[i].displayName === "Color Balance (RGB)") {
+  //        effect = components[i];
+  //        break; 
+  //      }
+  //    }
    
-     if (effect) {
-       effect.properties[83].setValue(100, true);
-     } else {
-       alert("Lumetri Color effect not found in the components.");
-     }
-  }
-  else {
-    alert("components not found.")
-  }
+  //    if (effect) {
+  //      // Adjust the Red, Green, and Blue properties
+  //      effect.properties[0].setValue(0.5, true); // Example: Setting the Red property to 0.5
+  //      effect.properties[1].setValue(0.7, true); // Example: Setting the Green property to 0.7
+  //      effect.properties[2].setValue(0.8, true); // Example: Setting the Blue property to 0.8
+  //    } else {
+  //      alert("Color Balance (RGB) effect not found in the components.");
+  //    }
+  // } else {
+  //   alert("Components not found.")
+  // }
 }
+
+
 
 addEffects();
